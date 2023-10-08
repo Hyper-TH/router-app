@@ -37,6 +37,9 @@ function App() {
 // Define route system
 const Root = () => {
 	return <> 
+	{/* This element will render either <Root> when the URL is
+        "/contact", <Root> at "/data", or null if it is "/"
+    */}
 		<div> 
 			<Link to="/"> Home </Link > 
 			<Link to="/data"> Data </Link > 
@@ -44,7 +47,11 @@ const Root = () => {
 		</div>
 
 
-		{/* Outlet */}
+		{/* An <Outlet> should be used in parent route elements 
+		to render their child route elements. This allows nested UI 
+		to show up when child routes are rendered. If the parent route 
+		matched exactly, it will render a child index route or nothing 
+		if there is no index route.*/}
 		<div>
 			<Outlet />
 		</div>
